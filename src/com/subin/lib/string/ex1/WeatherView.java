@@ -2,6 +2,12 @@ package com.subin.lib.string.ex1;
 
 public class WeatherView {
 	
+	
+	// 메세지
+	public void view(String msg) {
+		System.out.println(msg);
+	}
+		
 	//view
 	//모든 지역의 날씨정볼르 출력하는 메서드
 	public void view(WeatherDTO [] weatherDTOs){
@@ -31,4 +37,5 @@ public class WeatherView {
 		System.out.println(weatherDTO.getCondition() + " \t ");
 		System.out.println("-------------------------------");
 	}
+	
 }

@@ -43,7 +43,12 @@ public class WeatherController {
 				break;
 			case 2:
 				WeatherDTO weatherDTO = this.weatherInfo.searchWeather(weatherDTOs);
-				weatherView.oneView(weatherDTO);
+				if(weatherDTO != null) {
+					weatherView.oneView(weatherDTO);
+				}
+				else {
+					this.weatherView.view("정보가 없어요.");
+				}
 				break;
 			case 3:
 				

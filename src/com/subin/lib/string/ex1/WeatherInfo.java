@@ -22,7 +22,7 @@ public class WeatherInfo{
 	public WeatherDTO searchWeather(WeatherDTO [] weatherDTOs) {
 		System.out.println("검색할 도시명 입력");
 		String cityname = sc.next();
-		WeatherDTO weatherDTO = new WeatherDTO();
+		WeatherDTO weatherDTO = null;
 		
 		for(int i=0;i<weatherDTOs.length;i++) {
 			if(cityname.equals(weatherDTOs[i].getCityname())) {
