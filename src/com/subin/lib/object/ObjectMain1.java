@@ -21,6 +21,9 @@ public class ObjectMain1 {
 		
 		boolean a = object.equals(object);
 		System.out.println(a);
+		
+		Test test = new Test();
+		test.hashCode();
 	}
 
 }
