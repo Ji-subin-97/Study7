@@ -61,6 +61,12 @@ public class WrapperMain3 {
 			System.out.println(checkNum);
 			System.out.println("올바르지 않은 번호입니다.");
 		}
+		
+		System.out.println("---------------------------Math");
+		double d = Math.random();
+		System.out.println(d);
 	}
+	
+	
 
 }
