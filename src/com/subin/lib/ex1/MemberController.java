@@ -30,10 +30,14 @@ public class MemberController {
 		while(flag) {
 			
 			MemberSection memberSection = new MemberSection();
-			boolean check = MemberSection.session.containsKey(memberDTO.getId());
-			afterLogin();
 			
-			flag = beforeLogin();
+			if(MemberSection.session.get("member")!=null) {
+				afterLogin();
+			}
+			else {
+				flag = beforeLogin();
+			}
+			
 			
 		}
 	}
@@ -42,6 +46,20 @@ public class MemberController {
 		System.out.println("2. 로그아웃");
 		System.out.println("3. 종료");
 		System.out.print("원하는 작업 : ");
+		int select = sc.nextInt();
+		
+		switch (select) {
+		case 1:
+			System.out.println("자기 정보 출력");
+			MemberView memberView = new MemberView();
+			memberView.view();
+			break;
+		case 2:
+			MemberSection.session.remove("member");
+			break;
+		default:
+			flag = false;
+		}
 	}
 	
 	private boolean beforeLogin() {
