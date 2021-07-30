@@ -1,0 +1,18 @@
+package com.subin.lib.exception;
+
+public class Exception_3 {
+
+	public static void main(String[] args) {
+		
+		Test3 test3 = new Test3();
+		
+		try {
+			test3.t3();
+		}catch (Exception e) {
+			System.out.println("예외 처리");
+			System.out.println(e.getMessage());
+			System.out.println("예외 처리 끝");
+		}
+	}
+
+}
