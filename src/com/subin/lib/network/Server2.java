@@ -10,6 +10,7 @@ import java.io.OutputStreamWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Random;
 
 public class Server2 {
@@ -59,14 +60,19 @@ public class Server2 {
 			ow = new OutputStreamWriter(os);
 			bw = new BufferedWriter(ow);
 			
-			Random random = new Random();
+			is = sc.getInputStream();
+			ir = new InputStreamReader(is);
+			br = new BufferedReader(ir);
+			
+			Random random = null;
 			
 			
 			
 			while(check) {
-				is = sc.getInputStream();
-				ir = new InputStreamReader(is);
-				br = new BufferedReader(ir);
+				
+				Calendar calendar = Calendar.getInstance();
+				
+				random = new Random(calendar.getTimeInMillis());
 				
 				int select = br.read();
 				int num = 0;

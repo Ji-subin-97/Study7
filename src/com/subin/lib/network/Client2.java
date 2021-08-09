@@ -31,6 +31,15 @@ public class Client2 {
 			sc = new Socket("172.30.1.27", 8080);
 			System.out.println("서버 접속 성공");
 			
+			os = sc.getOutputStream();
+			ow = new OutputStreamWriter(os);
+			bw = new BufferedWriter(ow);
+			
+			is = sc.getInputStream();
+			ir = new InputStreamReader(is);
+			br = new BufferedReader(ir);
+			
+			
 			boolean check = true;
 			
 			while(check) {
@@ -39,16 +48,8 @@ public class Client2 {
 				System.out.print("=>");
 				int select = scanner.nextInt();
 			
-				os = sc.getOutputStream();
-				ow = new OutputStreamWriter(os);
-				bw = new BufferedWriter(ow);
-				bw.write(select);
+				bw.write(select + "\r\n");
 				bw.flush();
-				
-				
-				is = sc.getInputStream();
-				ir = new InputStreamReader(is);
-				br = new BufferedReader(ir);
 				
 	
 				String getmsg = br.readLine();
